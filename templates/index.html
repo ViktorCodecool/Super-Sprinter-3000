@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <title>Flask Note</title>
+    </head>
+    <body>
+        <h1>Super Sprinter 3000</h1>
+        <a href="/userstory">Add New User Story</a>
+        <p></p>
+        {% if data: %}
+        <table>
+            <thead>
+              <th>ID</th>
+              <th>Story Title</th>
+              <th>User Story</th>
+              <th>Acceptance criteria</th>
+              <th>Business Value</th>
+              <th>Estimation</th>
+              <th>Status</th>
+            </thead>
+            <tbody>
+                {% for _data in data %}
+                  <tr>
+                    <td>{{ _data.id }}</td>
+                    <td>
+                        <a href="{{ url_for('upgradestory', id=_data.id) }}">
+                        {{ _data.title }}
+                        </a>
+                    </td>
+                    <td>{{ _data.story }}</td>
+                    <td>{{ _data.acceptancecriteria }}</td>
+                    <td>{{ _data.business }}</td>
+                    <td>{{ _data.estimation }}</td>
+                    <td>{{ _data.status }}</td>
+                  </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <h1>I have got no stories</h1>
+        {% endif %}
+</body>
+</html>

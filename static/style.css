@@ -1,0 +1,14 @@
+body {
+    background-color: lightblue;
+}
+
+table {
+  border: solid thin red;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+td, th {
+  border: solid thin red;
+  padding: 1em;
+}
