@@ -36,6 +36,7 @@ def upgradestory(id):
             if _story['id'] == id:
                 stories[index]['title'] = request.form['title']
                 stories[index]['story'] = request.form['story']
+                stories[index]['acceptancecriteria'] = request.form['acceptancecriteria']
                 stories[index]['business'] = request.form['business']
                 stories[index]['estimation'] = request.form['estimation']
                 stories[index]['status'] = request.form['status']
